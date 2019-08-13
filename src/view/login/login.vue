@@ -56,7 +56,7 @@
         data(){
          return{
            divimg:{//背景图片的使用
-             backgroundImage:"url(" + require('../assets/yun.jpg') + ")",
+             backgroundImage:"url(" + require('../../assets/yun.jpg') + ")",
              backgroundRepeat: "no-repeat",
              height:"100%",
              width:"100%",
@@ -146,8 +146,7 @@
                   this.domain.userinfo.userid=respo.result.id
                   //将用户ID存入到全局的VUE对象中
 
-                  alert("登录成功");
-                  // /*this.$router.push({path:'/view/shouye/shouye',query:{username:respo.result.username,userid:respo.result.id}});*/
+                  this.$router.push({path:'/view/shouye/shouye',query:{username:respo.result.username,userid:respo.result.id}});
                 }else if(respo.error!=null){
                   //关闭加载窗
                   //关闭加载窗
@@ -286,7 +285,6 @@
            //向浏览器写一个Cookie
            document.cookie = 'testCookies' + "=" + response.data.token + "; " + -1;
            _this.moveCode(code,_this);
-           console.log(this.divimg);
         }).catch((error)=>{
 
         })
